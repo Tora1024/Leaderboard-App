@@ -1,6 +1,16 @@
 import React from 'react';
 
+/**
+ * Creates a react element with one profile.
+ * @param profile
+ * @returns {React$Element}
+**/
 const Item = ({profile}) => {
+	/**
+	 * Delivers an array of tests to show in the profile component.
+	 * @param profile
+	 * @returns {React$Element: array[React$Element]}
+	**/
 	const tests = profile.tests.map((test) => {
 		return (
 			<label key={test}>{test}</label>

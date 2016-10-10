@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
+import Axios from 'axios';
 
 import ProfileList from './components/profile_list';
 import Loading from './components/loading';
 import Header from './components/header';
 import Footer from './components/footer';
-
-import Axios from 'axios';
 
 const API_URL = 'https://apis.trainheroic.com/public/leaderboard/468425';
 
@@ -21,6 +20,11 @@ class App extends Component {
 	    this.fetchProfiles(API_URL);
 	}
 
+	/**
+	 * Get the info from the TrainHeoric API.
+	 * @param url
+	 * @returns {{data: Array of Objects}}
+	**/
 	fetchProfiles(url) {
 		Axios.get(url)
 		.then((response) => {
@@ -28,6 +32,7 @@ class App extends Component {
 			console.log(response);
 		})
 		.catch(function (error) {
+			//Gotta deal with scenario!!
 			console.log(error);
 		});
 	}

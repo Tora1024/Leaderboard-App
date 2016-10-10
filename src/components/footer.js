@@ -1,12 +1,16 @@
 import React from 'react';
 import Slider from 'nuka-carousel';
 
+/**
+ * Shows the footer section.
+ * @param footerlines
+ * @returns {React$Element}
+**/
 const Footer = ({footerlines}) => {
 	let avg = parseFloat(Number(footerlines.testStats[0].avg).toFixed(2));
 	
 	return (
 		<div className="footer">
-			
 			<Slider className="footer-slider" vertical={true} autoplay={true} autoplayInterval={3500} wrapAround={true} >
 				<p>Workout Date: {footerlines.date}</p>
 				<p>Workout Mode: {footerlines.workoutTitle}</p>

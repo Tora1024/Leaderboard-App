@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * Shows the loading spinner animation.
+ * @returns {React$Element}
+**/
 const Loading = () => {
 	return (
 		<div className="loader-wrapper">
